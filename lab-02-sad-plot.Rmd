@@ -42,7 +42,7 @@ staff_long <- staff %>%
   pivot_longer(
     cols = "1975" : "2011",
     names_to = "year",
-    values_to = "%_of_highers"
+    values_to = "per_of_hires"
     )
 ```
 
@@ -65,10 +65,12 @@ Team member 3 should pull to download updates and begins here.
 
 ### Exercise 4
 
-*Remove this text and add your answer here.*
+*Data not visible, x-axis labels are illegible due to overlapping*
 
 ```{r lineplot-1}
-# remove this comment and add your code here
+staff_long %>%
+  ggplot(aes(x = year, y = per_of_hires, color = faculty_type, group = faculty_type)) +
+  geom_line()
 ```
 
 
